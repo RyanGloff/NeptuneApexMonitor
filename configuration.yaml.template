@@ -1,3 +1,4 @@
+# This is the template for the configuration.yaml file that you will need to create
 apex:
   ipAddress: 192.168.x.x # ipAddress of the apex on the nework
   authOptions:
