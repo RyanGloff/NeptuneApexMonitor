@@ -22,5 +22,6 @@ apex:
         - magnesium
       # time in ms 5000 = 5 seconds
       pollRate: 5000
-  
+  restServer:
+    port: 8080
   

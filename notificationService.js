@@ -1,7 +1,6 @@
 import getParameters from './getParameters.js';
 import sendEmail from './sendEmail.js';
-import getConfiguration from './getConfiguration.js';
-import validateConfiguration from './validateConfiguration.js';
+import { storeParameters } from './parameterStorage.js';
 
 function parameterIsMonitored(config, key) {
   const monitoredParameters = config.apex.notifications.monitoring.parameters
@@ -23,16 +22,26 @@ function monitoredParameterHasChanged(config, old, fresh) {
   return dirty;
 }
 
-export function startNotificationService() {
-  const config = getConfiguration();
-  validateConfiguration(config);
+export function startNotificationService(config, mock) {
   let latestValues = null;
 
   const interval = setInterval(async () => {
-    const parameters = await getParameters(
-      config.apex.ipAddress,
-      config.apex.authOptions
-    );
+    let parameters;
+    if (mock) {
+      parameters = {
+        ph: 8.3,
+        temperature: 79,
+        calcium: 425,
+        alkalinity: 9.0,
+        magnesium: 1300
+      };
+    } else {
+      parameters = await getParameters(
+        config.apex.ipAddress,
+        config.apex.authOptions
+      );
+    }
+    storeParameters('data/latestParameters.json', parameters);
     console.log(parameters);
 
     if (monitoredParameterHasChanged(config, latestValues, parameters)) {

@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.19.2",
     "js-yaml": "^4.1.0",
     "node-fetch": "^3.3.2",
     "nodemailer": "^6.9.13"
