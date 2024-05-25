@@ -1,6 +1,7 @@
 import getParameters from './getParameters.js';
 import sendEmail from './sendEmail.js';
 import getConfiguration from './getConfiguration.js';
+import validateConfiguration from './validateConfiguration.js';
 
 function parameterIsMonitored(config, key) {
   const monitoredParameters = config.apex.notifications.monitoring.parameters
@@ -24,6 +25,7 @@ function monitoredParameterHasChanged(config, old, fresh) {
 
 export function startNotificationService() {
   const config = getConfiguration();
+  validateConfiguration(config);
   let latestValues = null;
 
   const interval = setInterval(async () => {
