@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-function sendEmail(distribuitionConfig, address, title, message) {
+function sendEmail(distributionConfig, address, title, message) {
   const transport = nodemailer.createTransport({
     service: distributionConfig.service,
     auth: {
