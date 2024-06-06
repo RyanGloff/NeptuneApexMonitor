@@ -2,6 +2,7 @@ import * as url from 'node:url';
 import fetch from 'node-fetch';
 
 async function login(ipAddress, username, password) {
+  console.log(`Attempting login with credentials. Username: ${username}, Password: ${password}`);
   const response = await fetch(`http://${ipAddress}/rest/login`, {
     headers: {
       "accept": "application/json, text/javascript, */*; q=0.01",

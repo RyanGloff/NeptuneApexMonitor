@@ -1,7 +1,5 @@
 import * as url from 'node:url';
-import fetch from 'node-fetch';
 import getStatus from './getStatus.js';
-import getConfiguration from './getConfiguration.js';
 
 async function getParameters(ipAddress, authOptions) {
   const status = await getStatus(ipAddress, authOptions);

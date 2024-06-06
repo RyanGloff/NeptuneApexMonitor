@@ -1,5 +1,5 @@
-import getParameters from './getParameters.js';
-import sendEmail from './sendEmail.js';
+import getParameters from './lib/apex/getParameters.js';
+import sendEmail from './lib/sendEmail.js';
 import { storeParameters } from './parameterStorage.js';
 
 function parameterIsMonitored(config, key) {

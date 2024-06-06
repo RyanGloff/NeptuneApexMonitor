@@ -1,5 +1,5 @@
 import { startNotificationService } from './notificationService.js';
-import { startRestServer } from './restServer.js';
+import { startRestServer } from './restServer/restServer.js';
 import getConfiguration from './getConfiguration.js';
 import validateConfiguration from './validateConfiguration.js';
 
