@@ -1,0 +1,6 @@
+{
+  "mockConfiguration": {
+    "hello": "world",
+    "endpoint": "/config"
+  }
+}
