@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reef Tank Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="css/constants.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script defer src="lib/getDateNDaysAgo.js"></script>
+    <script defer src="lib/toApexDate.js"></script>
+    <script defer src="lib/handleApiResponse.js"></script>
+    <script defer src="lib/requestConfig.js"></script>
+    <script defer src="lib/requestTLog.js"></script>
+    <script defer src="lib/requestStatus.js"></script>
+    <script defer src="components/ParameterChickletElement.js"></script>
+    <script defer src="components/ParameterGraphElement.js"></script>
+    <script defer src="components/ParameterDashboardElement.js"></script>
+
+  </head>
+  <body>
+    <parameter-graph parameter="ph" numDays="7"></parameter-graph>
+    <parameter-dashboard></parameter-dashboard>
+  </body>
+</html>

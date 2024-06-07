@@ -4,12 +4,10 @@ class ParameterGraphElement extends HTMLElement {
 
   #parameter;
   #numDays;
-
-  #requestingData = false;
+  #startDay;
 
   constructor() {
     super();
-    this.#buildUI();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -21,6 +19,9 @@ class ParameterGraphElement extends HTMLElement {
       case 'numDays':
         this.#numDays = newValue;
         break;
+      case 'startDay':
+        this.#startDay = newValue;
+        break;
       default:
         break;
     }
@@ -28,9 +29,9 @@ class ParameterGraphElement extends HTMLElement {
   }
 
   #buildUI() {
-    this.#requestingData = true;
-    requestParameterHistory(this.#parameter, this.#numDays)
+    requestTLog(this.#startDay || toApexDate(getDateNDaysAgo(7)), this.#numDays || 7)
       .then(res => {
+        console.log(res);
         this.innerHTML = JSON.stringify(res);
       });
   }
