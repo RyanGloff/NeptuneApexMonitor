@@ -4,6 +4,10 @@
     <title>Reef Tank Dashboard</title>
     <link rel="stylesheet" type="text/css" href="css/constants.css"/>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/ParameterChickletElement.css"/>
+    <link rel="stylesheet" type="text/css" href="css/module.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="css/ApexDashboardElement.css"/>
+    <link rel="stylesheet" type="text/css" href="css/TridentDashboardElement.css"/> -->
 
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -16,14 +20,12 @@
     <script defer src="lib/requestTLog.js"></script>
     <script defer src="lib/triggerTridentTest.js"></script>
     <script defer src="components/ParameterChickletElement.js"></script>
-    <script defer src="components/ParameterGraphElement.js"></script>
-    <script defer src="components/ParameterDashboardElement.js"></script>
+    <script defer src="components/ApexDashboardElement.js"></script>
     <script defer src="components/TridentDashboardElement.js"></script>
 
   </head>
   <body>
-    <parameter-graph parameter="ph" numDays="7"></parameter-graph>
-    <parameter-dashboard></parameter-dashboard>
+    <apex-dashboard></apex-dashboard>
     <trident-dashboard></trident-dashboard>
   </body>
 </html>

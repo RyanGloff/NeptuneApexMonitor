@@ -1,0 +1,21 @@
+parameter-chicklet {
+  position: relative;
+  display: inline-block;
+
+  .parameter-reading {
+    border: 1px solid red;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+  }
+  .parameter-reading > div {
+    font-size: 2rem;
+  }
+  .parameter-reading > p {
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    bottom: 0.25rem;
+    transform: translateX(-50%);
+  }
+}

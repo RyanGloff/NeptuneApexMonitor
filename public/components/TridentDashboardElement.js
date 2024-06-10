@@ -9,8 +9,6 @@ class TridentDashboardElement extends HTMLElement {
   #magChicklet;
   #magGraph;
 
-  #menu;
-
   constructor() {
     super();
     this.#buildUI();
@@ -24,89 +22,7 @@ class TridentDashboardElement extends HTMLElement {
     .then(([ tlogResult, statusResult ]) => {
       const tridentModule = statusResult.modules.filter(m => m.hwtype === 'TRI')[0];
       this.innerHTML = `
-        <style>
-          .triton-dashboard {
-            display: inline-block;
-            border: 1px solid blue;
-            border-radius: 0.5rem;
-            position: relative;
-          }
-          .triton-dashboard > .summary {
-            display: inline-block;
-            padding: 0.5rem;
-          }
-          .triton-dashboard > .summary > parameter-chicklet:hover {
-            background: #CCC;
-          }
-          .triton-dashboard .header {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 0.5rem;
-          }
-          .triton-dashboard .header h1 {
-            font-size: 1em;
-            padding: 0 1rem;
-            margin: 0;
-          }
-          .triton-dashboard .header .menu {
-            display: grid;
-            grid-template-rows: 1fr 1fr 1fr;
-            border: 2px solid black;
-            border-radius: 5px;
-            margin: 0 1rem;
-            padding: 1px 0;
-          }
-          .triton-dashboard .header .menu > div {
-            height: 2px;
-            width: 1rem;
-            margin: 1.5px;
-            background: black;
-          }
-          .triton-dashboard .options {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 1px solid black;
-            border-radius: 1rem;
-            padding: 1rem;
-            background: white;
-          }
-          .triton-dashboard .options > h2 {
-            text-align: center;
-            margin: 0 3rem;
-          }
-          .triton-dashboard .options > .exit {
-            position: absolute;
-            right: 0.5rem;
-            top: 0.5rem;
-            border: 1px solid black;
-            border-radius: 3px;
-            padding: 0.25rem;
-            background: red;
-          }
-          .triton-dashboard .options ul.buttons {
-            margin: 1rem 0;
-          }
-          .triton-dashboard .options ul.buttons li {
-            padding: 0.25rem;
-            border: 1px solid black;
-            border-radius: 5px;
-            text-align: center;
-            margin: 0.25rem 0;
-          }
-          .triton-dashboard .options ul.buttons li:hover {
-            background: #CCC;
-          }
-          .triton-dashboard .options .usage-values > div {
-            display: flex;
-            justify-content: space-between;
-          }
-          .triton-dashboard .options .usage-values > div > div {
-            display: inline-block;
-          }
-        </style>
-        <div class="triton-dashboard">
+        <div class="triton-dashboard module">
           <div class="header">
             <h1>Trident - ${tridentModule.extra.status.toUpperCase() || 'Status'}</h1>
             <div class="menu">
@@ -172,8 +88,6 @@ class TridentDashboardElement extends HTMLElement {
         this.#setupEventListenersOnChicklets();
         this.#setupMenu();
     });
-
-    
   }
 
   #getParameterValueFromStatus(status, type) {
@@ -210,6 +124,7 @@ class TridentDashboardElement extends HTMLElement {
         this.#alkGraph.setAttribute('hidden', '');
       }
     });
+
     this.#calcChicklet = this.querySelector('parameter-chicklet[name="Calcium"]');
     this.#calcGraph = this.querySelector('.graphs > .calcium');
     this.#calcChicklet.addEventListener('click', e => {
@@ -221,6 +136,7 @@ class TridentDashboardElement extends HTMLElement {
         this.#calcGraph.setAttribute('hidden', '');
       }
     });
+
     this.#magChicklet = this.querySelector('parameter-chicklet[name="Magnesium"]');
     this.#magGraph = this.querySelector('.graphs > .magnesium');
     this.#magChicklet.addEventListener('click', e => {
@@ -233,7 +149,6 @@ class TridentDashboardElement extends HTMLElement {
       }
     });
   }
-
 }
 
 customElements.define('trident-dashboard', TridentDashboardElement);

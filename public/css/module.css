@@ -1,0 +1,97 @@
+.module {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  position: relative;
+
+  .summary {
+    display: inline-block;
+    padding: 0.5rem;
+
+    parameter-chicklet:hover {
+      background: #CCC;
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+
+    h1 {
+      font-size: 1em;
+      padding: 0 1rem;
+      margin: 0;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      border: 2px solid black;
+      border-radius: 5px;
+      margin: 0 1rem;
+      padding: 1px 0;
+
+      > div {
+        height: 2px;
+        width: 1rem;
+        margin: 1.5px;
+        background: black;
+      }
+    }
+  }
+    
+  .options {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    background: white;
+
+    > h2 {
+      text-align: center;
+      margin: 0 3rem;
+    }
+
+    > .exit {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 0.25rem;
+      background: red;
+    }
+
+    ul.buttons {
+      margin: 1rem 0;
+
+      li {
+        padding: 0.25rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        text-align: center;
+        margin: 0.25rem 0;
+      }
+
+      li:hover {
+        background: #CCC;
+      }
+    }
+
+    .usage-values {
+      > div {
+        display: flex;
+        justify-content: space-between;
+
+        > div {
+          display: inline-block;
+        }
+      }
+    }
+  } 
+}
+
