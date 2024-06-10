@@ -1,5 +1,8 @@
 html, body {
   cursor: default;
+  font-family: Tahoma, Verdana, sans-serif;
+  background: var(--base-300);
+  color: var(--grey-100);
 }
 
 ul, ol, li {

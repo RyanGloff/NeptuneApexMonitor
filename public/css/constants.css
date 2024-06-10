@@ -1,4 +1,11 @@
 :root {
+  --base-100: #382f66;
+  --base-200: #2c274f;
+  --base-300: #252046;
+  --grey-100: #b3b4d0;
+  --blue-100: #32649d;
+  --cherry-100: #d74661;
+
   --alkalinity-color: blue;
   --calcium-color: purple;
   --magnesium: green;
