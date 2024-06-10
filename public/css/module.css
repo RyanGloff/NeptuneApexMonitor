@@ -8,7 +8,11 @@
     display: inline-block;
     padding: 0.5rem;
 
-    parameter-chicklet:hover {
+    parameter-chicklet.clickable {
+      cursor: pointer;
+    }
+
+    parameter-chicklet.clickable:hover {
       background: #CCC;
     }
   }
@@ -31,6 +35,7 @@
       border-radius: 5px;
       margin: 0 1rem;
       padding: 1px 0;
+      cursor: pointer;
 
       > div {
         height: 2px;
@@ -64,6 +69,7 @@
       border-radius: 3px;
       padding: 0.25rem;
       background: red;
+      cursor: pointer;
     }
 
     ul.buttons {
@@ -75,6 +81,7 @@
         border-radius: 5px;
         text-align: center;
         margin: 0.25rem 0;
+        cursor: pointer;
       }
 
       li:hover {

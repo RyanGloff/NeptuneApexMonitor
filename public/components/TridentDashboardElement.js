@@ -34,14 +34,17 @@ class TridentDashboardElement extends HTMLElement {
           </div>
           <div class="summary">
             <parameter-chicklet
+              class="clickable"
               name="Alkalinity"
               value="${this.#getParameterValueFromStatus(statusResult, 'alk')}">
             </parameter-chicklet>
             <parameter-chicklet
+              class="clickable"
               name="Calcium"
               value="${this.#getParameterValueFromStatus(statusResult, 'ca')}">
             </parameter-chicklet>
             <parameter-chicklet
+              class="clickable"
               name="Magnesium"
               value="${this.#getParameterValueFromStatus(statusResult, 'mg')}">
             </parameter-chicklet>
