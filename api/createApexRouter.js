@@ -6,6 +6,7 @@ import getConfig from '../lib/apex/getConfig.js';
 import getStatus from '../lib/apex/getStatus.js';
 import getTLog from '../lib/apex/getTLog.js';
 import getILog from '../lib/apex/getILog.js';
+import triggerTridentTest from '../lib/apex/triggerTridentTest.js';
 
 const config = getConfiguration();
 
@@ -28,9 +29,14 @@ function createApexRouter() {
   });
 
   router.get('/ilog', async (req, res) => {
-    console.log('ilog');
     if (config.apex.mockCalls) return res.json(loadMockResponse('/ilog.json'));
     res.json(await getILog(req.query.startDay, req.query.numDays));
+  });
+
+  router.put('/testRequest/:parameter', async (req, res) => {
+    console.log(`Test request for ${req.params.parameter}`);
+    if (config.apex.mockCalls) return res.json(loadMockResponse('/testRequest.json'));
+    res.json(await triggerTridentTest(req.params.parameter));
   });
 
   return router;
